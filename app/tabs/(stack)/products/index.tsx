@@ -22,7 +22,7 @@ const ProductScreen = () => {
               </Text>
 
               <Link
-                href={`/(stack)/products/${item.id}`}
+                href={`/tabs/(stack)/products/${item.id}`}
                 className="px-4 py-2 text-primary"
               >
                 View Details
