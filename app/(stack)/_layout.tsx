@@ -3,7 +3,16 @@ import { Stack } from 'expo-router';
 const StackLayout = () => {
   return (
     // router stack
-    <Stack>
+    <Stack
+      // para todas las screens
+      screenOptions={{
+        headerShadowVisible: false,
+        contentStyle: {
+          backgroundColor: 'white',
+        },
+      }}
+    >
+      {/* ----- screens registradas en el stack ----- */}
       <Stack.Screen
         name="home/index" // router dir
         options={{
@@ -29,6 +38,13 @@ const StackLayout = () => {
         name="settings/index" // router dir
         options={{
           title: 'Settings',
+        }}
+      />
+
+      <Stack.Screen
+        name="products/[id]" // router dir
+        options={{
+          title: 'Product',
         }}
       />
     </Stack>
