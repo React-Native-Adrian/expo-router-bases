@@ -15,23 +15,15 @@ const HomeScreen = () => {
 
         {/* -------- v2 with link req forwardRef -------- */}
         <Link href="/profile" asChild>
-          <CustomButton label="Profile" className="mb-2" />
+          <CustomButton label="Profile" className="mb-2" color="secondary" />
         </Link>
 
         {/* -------- variants -------- */}
         <CustomButton
           label="Settings"
           variant="outlined"
-          color="tertiary"
+          color="primary"
           onPress={() => router.push('/settings')}
-          className="mb-2"
-        />
-
-        <CustomButton
-          label="Home"
-          variant="text"
-          color="tertiary"
-          onPress={() => router.push('/home')}
           className="mb-2"
         />
 

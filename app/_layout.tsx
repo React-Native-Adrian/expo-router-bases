@@ -1,5 +1,3 @@
-import { View } from 'react-native';
-
 import './global.css';
 
 // router
@@ -25,12 +23,12 @@ const RootLayout = () => {
 
   if (!loaded && !error) return null;
 
-  return (
-    <View>
-      {/* --- ROUTER: app/ --- */}
-      <Slot />
-    </View>
-  );
+  // --- ROUTER: app/ - Slot like Outlet in react-router-dom ---
+  // return <Slot />;
+
+  // --- ROUTER: app/ - StackNavigator ---
+  // return <Stack />;
+  return <Slot />; // Stack gestionado en app/(stack)/_layout.tsx
 };
 
 export default RootLayout;
