@@ -8,7 +8,7 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: 'indigo',
 
-        headerShown: false, // hide header in all screens
+        // headerShown: false, // hide header in all screens
 
         // tabBarStyle: {
         //   backgroundColor: 'white',
@@ -22,6 +22,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <Ionicons size={28} name="person-add" color={color} />
           ),
+          headerShown: false,
         }}
       />
 

@@ -9,12 +9,20 @@ interface CustomButtonProps extends PressableProps {
 
   variant?: 'contained' | 'text' | 'outlined';
   className?: string;
+  textClassName?: string;
 }
 
 // forwardRef para usarlo en Link asChild
 const CustomButton = React.forwardRef<View, CustomButtonProps>(
   (
-    { label, color = 'primary', variant = 'contained', className, ...rest },
+    {
+      label,
+      color = 'primary',
+      variant = 'contained',
+      className,
+      textClassName,
+      ...rest
+    },
     ref
   ) => {
     const btnColor = {
@@ -37,7 +45,13 @@ const CustomButton = React.forwardRef<View, CustomButtonProps>(
     if (variant === 'text') {
       return (
         <Pressable className={cn('p-3', className)} {...rest} ref={ref}>
-          <Text className={cn(textColor, 'text-center font-work-medium')}>
+          <Text
+            className={cn(
+              textColor,
+              'text-center font-work-medium',
+              textClassName
+            )}
+          >
             {label}
           </Text>
         </Pressable>
@@ -56,7 +70,13 @@ const CustomButton = React.forwardRef<View, CustomButtonProps>(
           {...rest}
           ref={ref}
         >
-          <Text className={cn(textColor, 'text-center font-work-medium')}>
+          <Text
+            className={cn(
+              textColor,
+              'text-center font-work-medium',
+              textClassName
+            )}
+          >
             {label}
           </Text>
         </Pressable>
@@ -74,7 +94,14 @@ const CustomButton = React.forwardRef<View, CustomButtonProps>(
         {...rest}
         ref={ref}
       >
-        <Text className="text-white text-center font-work-medium">{label}</Text>
+        <Text
+          className={cn(
+            'text-white text-center font-work-medium',
+            textClassName
+          )}
+        >
+          {label}
+        </Text>
       </Pressable>
     );
   }

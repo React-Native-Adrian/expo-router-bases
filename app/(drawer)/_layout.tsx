@@ -1,14 +1,12 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Drawer } from 'expo-router/drawer';
 
-import CustomDrawer from '../components/shared/CustomDrawer';
+import CustomDrawer from '../../components/shared/CustomDrawer';
 
 const DrawerLayout = () => {
   return (
     <Drawer
       screenOptions={{
-        headerShown: false, // ocultar header
-
         overlayColor: 'rgba(0, 0, 0, 0.4)',
         drawerActiveTintColor: 'indigo',
 
@@ -26,6 +24,8 @@ const DrawerLayout = () => {
         options={{
           drawerLabel: 'Tabs',
           title: 'tabs',
+
+          headerShown: false, // only for this screen
 
           drawerIcon: ({ color, size }) => (
             <Ionicons name="apps-outline" color={color} size={size} />
