@@ -3,7 +3,10 @@ import { Redirect } from 'expo-router';
 const App = () => {
   // return <Redirect href="/home" />;
   // return <Redirect href="/tabs/home" />;
-  return <Redirect href="/drawer/users" />;
+
+  // // // los separadores son opcionales en la ruta: '/(drawer)/(tabs)/(stack)/home' === '/home'
+  // return <Redirect href="/(drawer)/(tabs)/(stack)/home" />;
+  return <Redirect href="/home" />;
 
   // docs :p
   // return (

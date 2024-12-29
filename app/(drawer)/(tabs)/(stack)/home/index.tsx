@@ -9,12 +9,12 @@ const HomeScreen = () => {
       <View className="px-10 mt-5">
         <CustomButton
           label="Products"
-          onPress={() => router.push('/tabs/(stack)/products')}
+          onPress={() => router.push('/products')}
           className="mb-2"
         />
 
         {/* -------- v2 with link req forwardRef -------- */}
-        <Link href="/tabs/(stack)/profile" asChild>
+        <Link href="/profile" asChild>
           <CustomButton label="Profile" className="mb-2" color="secondary" />
         </Link>
 
@@ -23,7 +23,7 @@ const HomeScreen = () => {
           label="Settings"
           variant="outlined"
           color="primary"
-          onPress={() => router.push('/tabs/(stack)/settings')}
+          onPress={() => router.push('/settings')}
           className="mb-2"
         />
 

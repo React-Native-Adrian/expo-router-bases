@@ -7,6 +7,8 @@ const DrawerLayout = () => {
   return (
     <Drawer
       screenOptions={{
+        headerShown: false, // ocultar header
+
         overlayColor: 'rgba(0, 0, 0, 0.4)',
         drawerActiveTintColor: 'indigo',
 
@@ -19,6 +21,18 @@ const DrawerLayout = () => {
       // custom drawer content q x props recibe el menu
       drawerContent={CustomDrawer}
     >
+      <Drawer.Screen
+        name="(tabs)"
+        options={{
+          drawerLabel: 'Tabs',
+          title: 'tabs',
+
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="apps-outline" color={color} size={size} />
+          ),
+        }}
+      />
+
       <Drawer.Screen
         name="users/index"
         options={{
