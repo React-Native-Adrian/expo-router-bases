@@ -8,6 +8,9 @@ import { useFonts } from 'expo-font';
 import { useEffect } from 'react';
 SplashScreen.preventAutoHideAsync();
 
+// drawer
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 const RootLayout = () => {
   const [loaded, error] = useFonts({
     'WorkSans-Black': require('../assets/fonts/WorkSans-Black.ttf'),
@@ -28,7 +31,13 @@ const RootLayout = () => {
 
   // --- ROUTER: app/ - StackNavigator ---
   // return <Stack />;
-  return <Slot />; // Stack gestionado en app/(stack)/_layout.tsx
+  // return <Slot />; // Stack gestionado en app/(stack)/_layout.tsx
+
+  return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Slot />
+    </GestureHandlerRootView>
+  );
 };
 
 export default RootLayout;
